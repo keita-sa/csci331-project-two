@@ -38,10 +38,10 @@ def consumer():
         for i in range(k2):
             data = buffer[(next_out + i) % n]
             if data > 1:
-                print("Race condition: Consumer too slow.")
+                print("Race condition detected!: Consumer too slow.")
                 exit(1)
             elif data == 0:
-                print("Race condition: Producer too slow.")
+                print("Race condition detected!: Producer too slow.")
                 exit(1)
             else:
                 buffer[(next_out + i) % n] = 0
